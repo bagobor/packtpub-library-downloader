@@ -95,10 +95,14 @@ def download_book(book, directory, assets, session, headers):
     # create the directory if doesn't exist
     if not os.path.exists(book_directory):
         os.makedirs(book_directory)
+    else:
+        print('Skipping: ' + title)
+        return
 
     # the title sometimes contains some weird characters that python could not print
     print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    print(title.encode(sys.stdout.encoding, errors='replace').decode())
+    # print(title.encode(sys.stdout.encoding, errors='replace').decode())
+    
 
     # get the download links
     pdf = book.xpath(".//div[contains(@class,'download-container')]//a[contains(@href,'/pdf')]/@href")
@@ -369,6 +373,6 @@ def main(argv):
 
 
 if __name__ == "__main__":
-    reload(sys)
-    sys.setdefaultencoding('utf8')
+    # reload(sys)
+    # sys.setdefaultencoding('utf8')
     main(sys.argv[1:])
