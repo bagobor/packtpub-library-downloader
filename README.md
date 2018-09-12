@@ -60,4 +60,4 @@ Automatically download all your eBooks and videos. (See: [PacktPub Free Daily Bo
 
 		pip install lxml
 
-Tested working on Python 2.7.11 and Python 3.6.0 :: Anaconda 4.3.0 (64-bit)
+Tested working on Windows 10 x64 with Python 3.6.x (64-bit)
